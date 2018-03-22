@@ -1,0 +1,36 @@
+{
+	"Poems":
+	[
+		{
+		  "Line1": "Old pond",
+    		"Line2": "Frog leaps in",
+    		"Line3": "Water's sound"
+    		},
+		{
+			"Line1": "the first cold shower",
+				"Line2": "even the monkey seems to want",
+				"Line3": "a little coat of straw"
+			},
+			{
+				"Line1": "the wind of Fuji",
+					"Line2": "I've brought on my fan",
+					"Line3": "a gift from Edo"
+				},
+				{
+					"Line1": "From time to time",
+						"Line2": "The clouds give rest",
+						"Line3": "To the moon-beholders"
+					},
+					{
+						"Line1": "blowing from the west",
+							"Line2": "falling leaves gather",
+							"Line3": "in the east"
+						},
+						{
+							"Line1": "I kill an ant",
+								"Line2": "I realize my three children",
+								"Line3": "have been wathching"
+							}
+
+ 	]
+}
