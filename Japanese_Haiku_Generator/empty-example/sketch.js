@@ -2,6 +2,10 @@ let img;
 let font;
 let music;
 
+var line1Rand;
+var line2Rand;
+var line3Rand;
+
 //Creating the arrays of text. In a Haiku, there is
 //three lines of poetry. The arrays are split in three,
 //according to the lines. Each is a famous Haiku poem.
@@ -17,23 +21,21 @@ function preload (){
   img = loadImage ('assets/japan2.jpg');
   font = loadFont('assets/font.ttf');
   music = loadSound ('assets/Flower.mp3');
+  //line1 soundfiles
+ oldpond = loadSound ('quotes/Line1/oldpond.wav');
+ thefirst = loadSound ('quotes/Line1/thefirst.wav');
+ thewind = loadSound ('quotes/Line1/thewind.wav');
+ fromtime = loadSound ('quotes/Line1/fromtime.wav');
+ blowingfrom = loadSound ('quotes/Line1/blowingfrom.wav');
+ ikill = loadSound ('quotes/Line1/ikill.wav');
+  //line2 soundfiles
+ eventhe = loadSound ('quotes/Line2/eventhe.wav');
 }
 
 function setup(){
-  //line1 soundfiles
-// oldpond = loadSound ('quotes/Line1/oldpond.wav', callback);
-// thefirst = loadSound ('quotes/Line1/thefirst.wav', callback);
-// thewind = loadSound ('quotes/Line1/thewind.wav', callback);
-// fromtime = loadSound ('quotes/Line1/fromtime.wav', callback);
-// blowingfrom = loadSound ('quotes/Line1/blowingfrom.wav', callback);
-// ikill = loadSound ('quotes/Line1/ikill.wav', callback);
-  //line2 soundfiles
-// eventhe = loadSound ('quotes/Line2/eventhe.wav', callback);
+
    createCanvas (1000, 667);
    background (img);
-
-
-
 
   music.play();
   //noLoop();
@@ -49,42 +51,61 @@ textSize (70);
 fill (0);
 
 //line 1 of haiko
-  text(random (line1), width/2, 210);
+line1Rand = random (line1);
+text(line1Rand, width/2, 210);
 //line 2 of haiko
-  text(random (line2), width/2, 265);
+line2Rand = random (line2);
+text(line2Rand, width/2, 265);
 //line 3 of haiko
-  text(random (line3), width/2, 320);
+line3Rand = random (line3);
+text(line3Rand, width/2, 320);
+
+callback();
+
+oldpond.addCue(oldpond.duration()-0.01, callback2,line2Rand);
+thefirst.addCue(thefirst.duration()-0.01, callback2,line2Rand);
+thewind.addCue(thewind.duration()-0.01, callback2,line2Rand);
+fromtime.addCue(fromtime.duration()-0.01, callback2,line2Rand);
+blowingfrom.addCue(blowingfrom.duration()-0.01, callback2,line2Rand);
+ikill.addCue(ikill.duration()-0.01, callback2,line2Rand);
 }
 
-// function callback(){
+ function callback(){
 // //line1 sounds playing
-// if (line1[0]){
-//   oldpond.play();
-//   oldpond.setVolume(0.1);
-// }
-//
-// if (line1[1]){
-//   thefirst.play();
-//   thefirst.setVolume(0.1);
-// }
-//
-// if (line1[2]){
-//   thewind.play();
-//   thewind.setVolume(0.1);
-// }
-//
-//  if (line1[3]){
-//   fromtime.play();
-//   fromtime.setVolume(0.1);
-// }
-//
-// if (line1[4]){
-//  blowingfrom.play();
-//  blowingfrom.setVolume(0.1);
-// }
-//
-//  if (line1[5]){
-//   ikill.play();
-//   ikill.setVolume(0.1);
-// }
-// }
+ if (line1[0]== line1Rand){
+   oldpond.play();
+   oldpond.setVolume(0.1);
+ }
+
+ if (line1[1]== line1Rand){
+  thefirst.play();
+  thefirst.setVolume(0.1);
+}
+
+if (line1[2]== line1Rand){
+  thewind.play();
+  thewind.setVolume(0.1);
+}
+
+ if (line1[3]== line1Rand){
+  fromtime.play();
+  fromtime.setVolume(0.1);
+}
+
+if (line1[4]== line1Rand){
+ blowingfrom.play();
+ blowingfrom.setVolume(0.1);
+}
+
+ if (line1[5]== line1Rand){
+  ikill.play();
+  ikill.setVolume(0.1);
+}
+}
+
+function callback2() {
+  if (line2[1]== line2Rand) {
+    eventhe.play();
+    eventhe.setVolume(0.1);
+  }
+}
